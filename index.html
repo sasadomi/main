@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="cid:css-f2a18358-6161-4765-b1c0-6621406be711@mhtml.blink" />
+<title>세종과학예술영재학교 - 외출·외박</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="세종과학예술영재학교 기숙사 외출·외박 신청 목록">
+<meta property="og:title" content="세종과학예술영재학교">
+<meta property="og:description" content="세종과학예술영재학교 기숙사 외출·외박 신청 목록">
+<link rel="apple-touch-icon" sizes="180x180" href="https://sasadomi.hs.kr/res/image/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sasadomi.hs.kr/res/image/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sasadomi.hs.kr/res/image/favicon/favicon-32x32.png">
+<link rel="manifest" href="https://sasadomi.hs.kr/res/image/favicon/manifest.json">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://sasadomi.hs.kr/css/style.css?v=1.0.1">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://sasadomi.hs.kr/css/jquery.timepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+</head>
+
+<body onload="updateDates()">
+<div class="main">
+
+<div class="leftWrap">
+
+  <div class="head_wrap ">
+    <a class="menu_logo">
+      <img src="https://sasadomi.hs.kr/res/image/menu_logo.png" class="logo" alt="메뉴 로고">
+    </a>
+    <a class="m_menu_logo">
+      <img src="https://sasadomi.hs.kr/res/image/m_logo.png" class="logo" alt="모바일 메뉴 로고">
+    </a>
+    <div class="user_wrap">
+      <p></p>
+      <p class="class-info"></p>
+    </div>
+
+    <div class="menu_wrap">
+      <ul class="mainmenu">
+        <li class="mmenu" id="noticeMenu">
+          <span>공지사항</span>
+        </li>
+        <li class="mmenu" id="operationMenu" style="display:none;">
+          <span>운영일지</span>
+        </li>
+        <ul class="sub-menu" id="operationSubMenu" style="display:none;">
+          <li class="center-line" id="writeSubMenu">운영일지 작성</li>
+          <li class="center-line" id="lookupSubMenu">운영일지 조회</li>
+        </ul>
+        <li class="mmenu" id="scheduleMenu" style="display:none;">
+          <span>학사일정</span>
+        </li>
+        <li class="mmenu ov" id="outMenu">
+          <span>외출·외박</span>
+        </li>
+        <ul class="sub-menu" id="outSubMenu">
+          <li class="center-line" id="outApplySubMenu">신청</li>
+        </ul>
+        <li class="mmenu" id="deviceMenu">
+          <span>전자기기</span>
+        </li>
+        <ul class="sub-menu" id="devSubMenu">
+        </ul>
+        <li class="mmenu" id="lectureMenu" style="display:none;">
+          <span>수강정보</span>
+        </li>
+        <li class="mmenu" id="studyMenu">
+          <span>자율학습</span>
+        </li>
+        <ul class="sub-menu" id="studySubMenu">
+          <li class="center-line" id="studyApplySubMenu">자율학습 신청/현황</li>
+          <li class="center-line" id="studystatus">자율학습 통계</li>
+        </ul>
+        <li class="mmenu" id="pointMenu">
+          <span>상·벌점</span>
+        </li>
+        <ul class="sub-menu" id="pointSubMenu">
+          <li class="center-line" id="pointClassSubMenu">상·벌점 현황</li>
+          <li class="center-line" id="pointstatus">상·벌점 통계</li>
+        </ul>
+        <li class="mmenu" id="healthMenu">
+          <span>건강관리</span>
+        </li>
+        <ul class="sub-menu" id="healthSubMenu">
+          <li class="center-line" id="inbodySubMenu"><span id="smallmenu">인바디</span></li>
+          <li class="center-line" id="dosingSubMenu"><span id="smallmenu">투약</span></li>
+          <li class="center-line" id="emergencySubMenu"><span id="smallmenu">응급진료</span></li>
+          <li class="center-line" id="careSubMenu"><span id="smallmenu">요양</span></li>
+        </ul>
+      </ul>
+    </div>
+    <a class="m_btn" id="menuOpen"><i class="xi-bars"></i></a>
+
+    <div class="user_lock">
+      <div class="pw_change">
+        <a>비밀번호 변경</a>
+      </div>
+      <div class="logout">
+        <a>로그아웃</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="fl_body">
+    <div class="contents_wrap">
+      <div class="tit_box">
+        <h2>외출·외박</h2>
+      </div>
+
+      <button class="apply_btn"><i class="xi-border-color"></i></button>
+
+      <div class="search_box form-inline">
+        <div class="form-group outList">
+          <select class="form-control mr-1" id="searchTypeSelect">
+            <option value="">구분</option>
+            <option value="1">외출</option>
+            <option value="2">외박</option>
+          </select>
+        </div>
+        <button class="search_btn apply" title="검색"><i class="xi-search xi-2x"></i></button>
+      </div>
+
+      <div class="m-table table-hover">
+        <ul class="title">
+          <div>
+            <li class="item check"></li>
+            <li class="confirm appro" style="margin-left:0px;">승인</li>
+            <li class="info appli" style="float:right;" id="applicationDate"></li>
+            <li class="info application " style="float:left;margin-left:10%;" id="applicationDetails"></li>
+            <li class="info reason "><b>사유</b> 식사 및 산책</li>
+          </div>
+        </ul>
+      </div>
+
+      <table class="table table-hover">
+        <colgroup>
+          <col width="3%">
+          <col width="5%">
+          <col width="7%">
+          <col width="19%">
+          <col width="47%">
+          <col width="9%">
+          <col width="10%">
+        </colgroup>
+        <thead>
+          <tr>
+            <td></td>
+            <td>번호</td>
+            <td>구분</td>
+            <td>시간</td>
+            <td class="table-left">사유</td>
+            <td>신청일</td>
+            <td>승인여부</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>1</td>
+            <td>외출</td>
+            <td id="outTime"></td>
+            <td class="table-left">식사 및 산책</td>
+            <td id="requestDate"></td>
+            <td class="appro">승인</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="del-btn-wrap">
+          <button class="delete_btn"><i class="xi-trash"></i></button>
+        </div>
+
+        <div class="col align-center text-center fixed-lecture-page-links">
+          <ul class="page">
+            <li><i class="fas fa-angle-double-left"></i></li>
+            <li><i class="fas fa-angle-left"></i></li>
+            <li class="current-page"><span>1</span></li>
+            <li><i class="fas fa-angle-right"></i></li>
+            <li><i class="fas fa-angle-double-right"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer_wrap">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"No one ignorant of Mathematics enter&nbsp;here."</p>
+  </div>
+  <p></p>
+  <div class="footer_wrap">
+    <p><a>개인정보처리방침</a> | ⓒ 2022 세종과학예술영재학교 All rights reserved.</p>
+  </div>
+  <div class="m_footer_wrap">
+    <p>개인정보처리방침</p>
+    <p>"No one ignorant of informatics enter&nbsp;here."</p>
+    <p>ⓒ 2022 세종과학예술영재학교 All rights reserved.</p>
+    <img src="https://sasadomi.hs.kr/res/image/m_footerlogo.png" alt="모바일하단로고">
+  </div>
+  <div id="applyPopup">
+    <div class="applyPopup_box school_out">
+      <h2 class="popUpTit">외출·외박 신청</h2>
+      <button id="popCloseBtn_one"><i class="xi-close"></i></button>
+      <div class="select_box" id="applyFormArea"></div>
+
+      <div class="popUpBtnBox">
+        <button id="popUploadBtn_one">신청</button>
+        <div class="loading-box" id="loadingBox">
+          <i class="xi-spinner-1"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function updateDates() {
+    const now = new Date();
+    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+
+    const formatDate = (date) => {
+        const dayName = dayNames[date.getDay()];
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${month}-${day}(${dayName})`;
+    };
+
+    const formatTime = (date) => {
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        return `${hours}:${minutes}`;
+    };
+
+    const nowDate = formatDate(now);
+    
+    // Current time rounded to the nearest hour and set to 00 minutes
+    const currentHours = now.getHours();
+    const startDateTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), currentHours, 0);
+    
+    // Time 2 hours later
+    const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
+    
+    // Format the date and time for display
+    const startTime = formatTime(startDateTime);
+    const endTime = formatTime(endDateTime);
+    const currentDateTime = `${nowDate} ${startTime}`;
+    const detailedTimeRange = `${nowDate} ${startTime} - ${nowDate} ${endTime}`;
+
+    // Update the HTML elements with current date and time
+    document.getElementById('applicationDate').textContent = currentDateTime;
+    document.getElementById('applicationDetails').innerHTML = `외출 <b style="color:#c3c3c3;">|</b> ${detailedTimeRange}`;
+    document.getElementById('outTime').textContent = `${startTime} - ${endTime}`;
+    document.getElementById('requestDate').textContent = currentDateTime;
+}
+</script>
+</body>
+</html>
