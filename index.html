@@ -240,20 +240,16 @@ function updateDates() {
 
     const nowDate = formatDate(now);
     
-    // Current time rounded to the nearest hour and set to 00 minutes
     const currentHours = now.getHours();
     const startDateTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), currentHours, 0);
     
-    // Time 2 hours later
     const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
     
-    // Format the date and time for display
     const startTime = formatTime(startDateTime);
     const endTime = formatTime(endDateTime);
     const currentDateTime = `${nowDate} ${startTime}`;
     const detailedTimeRange = `${nowDate} ${startTime} - ${nowDate} ${endTime}`;
 
-    // Update the HTML elements with current date and time
     document.getElementById('applicationDate').textContent = currentDateTime;
     document.getElementById('applicationDetails').innerHTML = `외출 <b style="color:#c3c3c3;">|</b> ${detailedTimeRange}`;
     document.getElementById('outTime').textContent = `${startTime} - ${endTime}`;
